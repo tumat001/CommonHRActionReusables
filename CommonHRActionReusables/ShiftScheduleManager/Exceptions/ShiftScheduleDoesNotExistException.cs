@@ -1,0 +1,20 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CommonHRActionReusables.ShiftScheduleManager.Exceptions
+{
+    public class ShiftScheduleDoesNotExistException : ApplicationException
+    {
+
+        public int ScheduleShiftId { get; }
+
+        internal ShiftScheduleDoesNotExistException(int id)
+        {
+            ScheduleShiftId = id;
+        }
+
+    }
+}

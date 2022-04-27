@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B78B1DC9-1990-4150-8006-8ADF4384939F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CommonHRActionReusables</RootNamespace>
+    <AssemblyName>CommonHRActionReusables</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonDatabaseActionReusables">
+      <HintPath>..\..\CommonDatabaseActionReusables\CommonDatabaseActionReusables\bin\Debug\CommonDatabaseActionReusables.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AttendanceHistoryManager\Actions\AdvancedGetAttendanceHistoryAction.cs" />
+    <Compile Include="AttendanceHistoryManager\Actions\CreateAttendanceHistoryAction.cs" />
+    <Compile Include="AttendanceHistoryManager\Actions\DeleteAllAttendanceHistoryAction.cs" />
+    <Compile Include="AttendanceHistoryManager\AttendanceHistoryDatabaseManagerHelper.cs" />
+    <Compile Include="AttendanceHistoryManager\Configs\AttendanceHistoryDatabasePathConfig.cs" />
+    <Compile Include="AttendanceHistoryManager\ObjTypes\AdvancedGetAttendanceHistoryParameters.cs" />
+    <Compile Include="AttendanceHistoryManager\ObjTypes\AttendanceHistory.cs" />
+    <Compile Include="DateDefinerManager\Actions\AdvancedGetDayWithDefinitionAction.cs" />
+    <Compile Include="DateDefinerManager\Actions\CreateDayWithDefinitionAction.cs" />
+    <Compile Include="DateDefinerManager\Actions\DayWithDefinitionExistsAction.cs" />
+    <Compile Include="DateDefinerManager\Actions\DeleteAllDayWithDefinitionAction.cs" />
+    <Compile Include="DateDefinerManager\Actions\DeleteDayWithDefinitionAction.cs" />
+    <Compile Include="DateDefinerManager\Actions\EditDayWithDefinitionAction.cs" />
+    <Compile Include="DateDefinerManager\Actions\GetDayWithDefinitionAction.cs" />
+    <Compile Include="DateDefinerManager\DateDefinerDatabaseManagerHelper.cs" />
+    <Compile Include="DateDefinerManager\Exceptions\DayWithDefinitionDoesNotExistException.cs" />
+    <Compile Include="DateDefinerManager\ObjTypes\DayWithDefinitionParameters.cs" />
+    <Compile Include="DateDefinerManager\Utils\DayWithDefinitionToDaysConverter.cs" />
+    <Compile Include="PayrollManager\PayRateMatrix.cs" />
+    <Compile Include="PayrollManager\HumanWorkReportSummary.cs" />
+    <Compile Include="PayrollManager\HumanWorkReportOfDay.cs" />
+    <Compile Include="PayrollManager\PayrollCalculator.cs" />
+    <Compile Include="DateDefinerManager\Configs\DateDefinerDatabasePathConfig.cs" />
+    <Compile Include="DateDefinerManager\ObjTypes\DayWithDefinition.cs" />
+    <Compile Include="ShiftScheduleManager\Actions\AdvancedGetShiftScheduleAction.cs" />
+    <Compile Include="ShiftScheduleManager\Actions\CreateShiftScheduleAction.cs" />
+    <Compile Include="ShiftScheduleManager\Actions\DeleteAllShiftScheduleAction.cs" />
+    <Compile Include="ShiftScheduleManager\Actions\DeleteShiftScheduleAction.cs" />
+    <Compile Include="ShiftScheduleManager\Actions\EditShiftScheduleAction.cs" />
+    <Compile Include="ShiftScheduleManager\Actions\GetShiftScheduleAction.cs" />
+    <Compile Include="ShiftScheduleManager\Actions\IsShiftOverlappingAction.cs" />
+    <Compile Include="ShiftScheduleManager\Actions\ShiftScheduleExistsAction.cs" />
+    <Compile Include="ShiftScheduleManager\Configs\ShiftScheduleDatabasePathConfig.cs" />
+    <Compile Include="ShiftScheduleManager\Exceptions\ShiftScheduleOverlapException.cs" />
+    <Compile Include="ShiftScheduleManager\Exceptions\ShiftScheduleDoesNotExistException.cs" />
+    <Compile Include="ShiftScheduleManager\ObjTypes\ShiftSchedule.cs" />
+    <Compile Include="ShiftScheduleManager\ShiftScheduleDatabaseManagerHelper.cs" />
+    <Compile Include="TimeInSpanManager\Configs\TimeInSpanDatabasePathConfig.cs" />
+    <Compile Include="TimeInSpanManager\Exceptions\TimeSpanOfEmployeeAlreadyHasEndException.cs" />
+    <Compile Include="TimeInSpanManager\Exceptions\TimeSpanOfEmployeeAlreadyHasStartException.cs" />
+    <Compile Include="TimeInSpanManager\Actions\AdvancedGetTimeInOrOutLogOfEmployeeAction.cs" />
+    <Compile Include="TimeInSpanManager\Actions\DeleteAllTimeSpansAction.cs" />
+    <Compile Include="TimeInSpanManager\Actions\IsTimeStartOrEndAction.cs" />
+    <Compile Include="TimeInSpanManager\Actions\StartAndEndTimeInAction.cs" />
+    <Compile Include="TimeInSpanManager\Listeners\ITimeInAndOutListener.cs" />
+    <Compile Include="TimeInSpanManager\ObjTypes\TimeInOrOutLog.cs" />
+    <Compile Include="TimeInSpanManager\ObjTypes\TimeSpanOfWork.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DateDefinerManager\ObjTypes\CalendarOfMonth.cs" />
+    <Compile Include="DateDefinerManager\ObjTypes\DayTypes.cs" />
+    <Compile Include="TimeInSpanManager\TimeInSpanDatabaseManagerHelper.cs" />
+    <Compile Include="TimeInSpanManager\Utils\TimeLogToTimeSpanConverter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="AttendanceHistoryManager\Exceptions\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
